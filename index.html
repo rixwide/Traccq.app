@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traccq.app</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <!-- Background Container -->
+    <div class="container">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbar" onclick="openHamburgerMenu()">
+            <span class="system-uicons--menu-hamburger"></span>
+        </button>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <!-- Close Hamburger Menu -->
+            <button class="close-hamburger-menu" aria-label="Close navigation" onclick="closeHamburgerMenu()">
+                <span class="system-uicons--cross"></span>
+            </button>
+            <!-- Logo and Links -->
+            <a href="./index.html"><img class="logo" src="./img/Traccq-horizontal-logo.png" alt="Traccq Logo"></a>
+            <!-- Navigation Links -->
+            <ul>
+                <li class="how-it-works"><a href="">How it Works</a></li>
+                <li class="about"><a href="">About Developer</a></li>
+                <li class="donate"><a href="">Donate</a></li>
+                <a href="./app/app.html"><button class="btn login">Log in</button></a>
+                <a href="./app/app.html"><button class="btn signup">Sign up</button></a>
+            </ul>
+        </nav>
+        <!-- Overlay for Closing Menu -->
+        <div class="overlay" onclick="closeHamburgerMenu()"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Text -->
+            <h1 class="heroText">All-in-One <br> Calculator App</h1>
+            <!-- Tagline -->
+            <span class="tagline">Your one-stop solution for tracking your income efficiently.</span>
+            <!-- Description and Call to Action -->
+            <p class="description">Traccq.app is designed to help you manage your finances with ease. <br> Whether you're tracking income, expenses, or savings, our app provides a comprehensive solution.</p>
+            <a href="./app/app.html"><button class="btn get-started">Get Started</button></a>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>&copy; 2025 Traccq.app. All rights reserved.</p>
+            <!-- Social Media Links -->
+            <ul class="social-media">
+                <li><a class="social FB" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"><path fill="" d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg></a></li>
+                <li><a class="social TW" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 14"><g fill=""><g clip-path="url(#primeTwitter0)"><path fill="" d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"/></g><defs><clipPath id="primeTwitter0"><path fill="#fff" d="M0 0h14v14H0z"/></clipPath></defs></g></svg></a></li>
+                <li><a class="social IG" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 26 26"><path fill="" d="M23.934 18.947c-.598 1.324-.884 1.916-1.652 3.086c-1.073 1.634-2.588 3.673-4.461 3.687c-1.666.014-2.096-1.087-4.357-1.069c-2.261.011-2.732 1.089-4.4 1.072c-1.873-.017-3.307-1.854-4.381-3.485c-3.003-4.575-3.32-9.937-1.464-12.79C4.532 7.425 6.61 6.237 8.561 6.237c1.987 0 3.236 1.092 4.879 1.092c1.594 0 2.565-1.095 4.863-1.095c1.738 0 3.576.947 4.889 2.581c-4.296 2.354-3.598 8.49.742 10.132M16.559 4.408c.836-1.073 1.47-2.587 1.24-4.131c-1.364.093-2.959.964-3.891 2.092c-.844 1.027-1.544 2.553-1.271 4.029c1.488.048 3.028-.839 3.922-1.99"/></svg></a></li>
+            </ul>
+        </footer>
+
+     </div>
+</body>
+</html>

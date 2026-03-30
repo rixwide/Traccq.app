@@ -1,0 +1,381 @@
+/* This file contains CSS styles for the Traccq application, including color variables, font imports, and layout styles for various components such as the navbar, main content, and login form. The styles are designed to create a cohesive and visually appealing user interface with responsive design considerations. */
+
+/* color variables and font imports */
+:root{
+  --LimeGreen: #19ff47;
+  --LimeGreen-Dark-800: #053310;
+  --secondary-color: #2eab54;
+  --off-white: #e8e9ea;
+  --black: #000;
+  --black-025: #181818;
+  --black-050: #292929;
+  --black-200: #525252;
+  --black-600: #a3a3a3;
+  --black-800: #ccc;
+  --grey-200: #adadad;
+  --accent-cyan: #00ccff;
+  --accent-mindero: #ccff66;
+  --accent-orange: #ff6600;
+  --accent-Tangerine-Yellow: #ffcc00;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+
+.sora-<uniquifier> {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    
+}
+
+/* html and body tag */
+html, body {
+    font-family: 'Sora', sans-serif;
+    color: var(--off-white);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* background container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(170deg, var(--black-050) 0%,var(--black-025) 20%, var(--black) 50%,var(--black) 55%, var(--LimeGreen-Dark-800) 75%,rgba(9, 92, 28, 1) 100%);
+    padding: 2em 4em;
+    overflow-x: hidden;
+}
+
+/* hamburger menu open icon */
+.system-uicons--menu-hamburger {
+  display: block;
+  width: 2em;
+  height: 2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 21'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke  -linejoin='round' d='M4.5 6.5h12m-12.002 4h11.997M4.5 14.5h11.995' stroke-width='1'/%3E%3C/svg%3E");
+  background-color: var(--off-white);
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+button.hamburger-menu {
+  display: none;
+  padding: 0;
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* hamburger menu close icon */
+.system-uicons--cross {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 21'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='m15.5 15.5l-10-10zm0-10l-10 10' stroke-width='1'/%3E%3C/svg%3E");
+  background-color: var(--off-white);
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+button.close-hamburger-menu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* app logo */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* navbar and nav-links parent */
+.navbar, ul {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  align-items: center;
+  transition: right 400ms ease-in-out;
+}
+
+/* nav-links parent */
+ul {
+    margin-left: auto;
+    gap: 1.2em;
+    
+}
+
+/* nav-links parent and children */
+ul li a {
+    text-decoration: none;
+    color: var(--black-600);
+    transition: all 200ms ease-in-out;
+}
+
+/* social-media-logos */
+.social svg{
+  fill: var(--off-white);
+  transition: fill 0.3s ease-in-out;
+}
+
+/* anchor tag only */
+a {
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+/* all buttons with class .btn */
+.btn {
+  border: none;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--off-white);
+  color: var(--off-white);
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+}
+
+/* overlay for closing Menu */
+.overlay{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: none;
+}
+
+/* login button */
+.login{
+  margin-left: 40px;
+}
+
+/* main content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 0 2em 0;
+  text-align: center;
+}
+
+/* main-content hero-Text */
+.main-content .heroText{
+  font-size: 5em;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+/* tagline */
+.tagline{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* description */
+.description{
+  font-size: 1em;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 2.5rem 0;
+  
+}
+
+/* button with class get-started */
+.btn.get-started{
+  font-size: 1.2em;
+  font-weight: 500;
+  background-color: var(--LimeGreen);
+  border: none;
+  color: var(--black);
+  transition: all 0.3s ease-in-out;
+
+}
+
+/* footer */
+.footer{
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 0.8em;
+}
+
+/* hover effects */
+/* hover effects nav-links parent and children */
+ul li a:hover {
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+ /* hover effects buttons */
+.btn:hover {
+  border: none;
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--black-025);
+  border: 1px solid var(--off-white);
+  background-color:var(--off-white);
+}
+
+ /* hover effects for anchor tags only */
+a:hover {
+  text-decoration: none;
+  color: var(--black-025);
+}
+
+/* social-media-logos */
+.social svg:hover{
+  fill: var(--LimeGreen);
+}
+
+/* hover effects for button with class get-started */
+.btn.get-started:hover {
+  font-size: 1.3em;
+  font-weight: 500;
+  background-color: var(--off-white);
+  border: none;
+  color: var(--black);
+}
+
+
+/* media queries for responsive design */
+@media screen and (max-width: 875px) {
+  button.hamburger-menu, button.close-hamburger-menu {
+    display: block;
+  }
+
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 1em 0.5em;
+    overflow-x: hidden;
+  }
+
+  .navbar{
+    position: fixed;
+    width: 100%;
+    width: fit-content;
+    height: 100%;
+    flex-flow: column nowrap;
+    align-items: start;
+    padding: 3em;
+    gap: 2em;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    background-color: var(--black-025);
+    overflow-x: hidden;
+  }
+
+  .show{
+    right: 0;
+  }
+
+  .show ~ .overlay{
+    display: block;
+  }
+  
+  .login{
+    margin: 0;
+  }
+ .navbar > ul {
+    position: relative;
+    margin: 0;
+    column-gap: em;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: start;
+    padding: 0;
+    
+}
+
+  .logo {
+      width: 100px;
+      height: auto;
+      margin: 0;
+      position: relative;
+  }
+    
+   .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0 1em 0;
+    text-align: center;
+  }
+
+  .main-content .heroText{
+    font-size: 4em;
+    margin: 2.5rem 0;
+    padding: 0;
+  }
+
+  .welcome-text{
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-bottom: 0.5em;
+    letter-spacing: 5px;
+  }
+
+  .tagline{
+    font-size: 0.75em;
+    font-weight: 200;
+  }
+
+  .description{
+    font-size: 0.75em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0.5em  0 2em 0;
+  }
+
+  .btn.get-started{
+    font-size: 1em;
+    font-weight: 500;
+    background-color: var(--LimeGreen);
+    border: none;
+    color: var(--black);
+
+  }
+
+  .footer{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    margin: 2em 0 0 0;
+  }
+
+  .social-media{
+    margin: 0;
+    padding: 0;
+  }
+}

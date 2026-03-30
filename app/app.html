@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traccq.app</title>
+    <link rel="stylesheet" href="./app.css">
+
+</head>
+<body>
+    <!-- AUTH SCREEN -->
+    <div id="auth-screen" class="auth-main-container">
+        <div class="auth-container">
+            <a href="../index.html"><img class="logo" src="../img/Traccq-horizontal-logo.png" alt="Traccq Logo"></a>
+            <hr>
+            
+            <div class="auth-title-description">
+                <h2>Welcome to Traccq</h2>
+                <p>Login to your Traccq account or create a new one to get started.</p>
+            </div>
+           
+            <label for="auth-email">Email</label>
+            <input type="email" id="auth-email" placeholder="Enter email" required>
+            <label for="auth-password">Password</label>
+            <input type="password" id="auth-password" placeholder="Enter password" required>
+            
+            <div class="auth-btns">
+                <button id="login-btn" class="auth-login">Login</button>
+                <button id="signup-btn" class="auth-signup">Sign Up</button>
+            </div>
+            
+
+            <p class="notice">This is a simple authentication screen for the Traccq application.</p>
+            <p id="auth-msg" class="auth-notification"></p>
+        </div>
+    </div>
+
+    <div class="container" id="app-container">
+        <!-- sidebar content -->
+        <aside class="sidebar">
+            <header>
+                <!-- Logo and Links -->
+                <a href="#"><img class="logo" src="../img/Traccq-horizontal-logo.png" alt="Traccq Logo"></a>
+            </header>
+           
+            <nav class="sidebar-section">
+                <ul class="main-nav">
+                    <li data-section=dashboard class="active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm0 8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1zm1-17a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>Dashboard</li>
+                    <li data-section=calculator><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path fill="currentColor" d="M11.5 1h-7A2.5 2.5 0 0 0 2 3.5v9A2.5 2.5 0 0 0 4.5 15h7a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 11.5 1m-6 2h5A1.5 1.5 0 0 1 12 4.5v1A1.5 1.5 0 0 1 10.5 7h-5A1.5 1.5 0 0 1 4 5.5v-1A1.5 1.5 0 0 1 5.5 3M6 9a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0 3a1 1 0 1 1-2 0a1 1 0 0 1 2 0m5-2a1 1 0 1 1 0-2a1 1 0 0 1 0 2m1 2a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-4-2a1 1 0 1 1 0-2a1 1 0 0 1 0 2m1 2a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg>Calculator</li>
+                    <li data-section=transactions><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H10a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3m1 10a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1Zm-3.5-4a1.5 1.5 0 0 0-1 .39a1.5 1.5 0 1 0 0 2.22a1.5 1.5 0 1 0 1-2.61M16 17a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4h1a1 1 0 0 0 0-2H3v-1a1 1 0 0 1 1-1a1 1 0 0 0 0-2a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1a1 1 0 0 0-1-1M6 18h1a1 1 0 0 0 0-2H6a1 1 0 0 0 0 2"/></svg>Transactions</li>
+                    <li data-section=budgets><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8.25 6.015V5a3.75 3.75 0 1 1 7.5 0v1.015c1.287.039 2.075.177 2.676.676c.833.692 1.053 1.862 1.492 4.203l.75 4c.617 3.292.925 4.938.026 6.022C19.794 22 18.119 22 14.77 22H9.23c-3.35 0-5.024 0-5.924-1.084s-.59-2.73.026-6.022l.75-4c.44-2.34.659-3.511 1.492-4.203c.601-.499 1.389-.637 2.676-.676M9.75 5a2.25 2.25 0 0 1 4.5 0v1h-4.5zm5.719 5.914a.75.75 0 0 1 .117 1.055l-4 5a.75.75 0 0 1-1.116.061l-2-2a.75.75 0 0 1 1.06-1.06l1.408 1.407l3.476-4.346a.75.75 0 0 1 1.055-.117" clip-rule="evenodd"/></svg>Budgets</li>
+                    <li data-section=to-do><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><defs><mask id="SVGIQLGgV2F"><g fill="none" stroke-linejoin="round" stroke-width="4"><path fill="#fff" stroke="#fff" d="M24 44a19.94 19.94 0 0 0 14.142-5.858A19.94 19.94 0 0 0 44 24a19.94 19.94 0 0 0-5.858-14.142A19.94 19.94 0 0 0 24 4A19.94 19.94 0 0 0 9.858 9.858A19.94 19.94 0 0 0 4 24a19.94 19.94 0 0 0 5.858 14.142A19.94 19.94 0 0 0 24 44Z"/><path stroke="#000" stroke-linecap="round" d="m16 24l6 6l12-12"/></g></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGIQLGgV2F)"/></svg>To-Do</li>
+                    <li data-section=invoice><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3zm1.5-11.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2L7.5 3.5L6 2L4.5 3.5L3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.26-1.26c-.17-.56-.26-1.15-.26-1.74c0-.68.12-1.36.34-2H6v-2h8.53A6 6 0 0 1 21 13.34V2zM18 13H6v-2h12zm0-4H6V7h12z"/></svg>Invoice</li>
+                </ul>
+
+                <div class="currency-switch">
+                    <label for="currency">Switch:</label>
+                    <select id="currency">
+                        <option value="USD">₦</option>
+                        <option value="USD">$</option>
+                        <option value="EUR">€</option>
+                        <option value="GBP">£</option>
+                    </select>
+                </div>
+                
+                <ul class="footer-nav">
+                    <li data-section=about>About</li>
+                    <li data-section=privacy-terms>Privacy Terms</li>
+                    <li data-section=rating>Rating & Feedback</li>
+                    <li data-section=logout><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><path fill-rule="evenodd" d="M11 20a1 1 0 0 0-1-1H5V5h5a1 1 0 1 0 0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5a1 1 0 0 0 1-1" clip-rule="evenodd"/><path d="M21.714 12.7a1 1 0 0 0 .286-.697v-.006a1 1 0 0 0-.293-.704l-4-4a1 1 0 1 0-1.414 1.414L18.586 11H9a1 1 0 1 0 0 2h9.586l-2.293 2.293a1 1 0 0 0 1.414 1.414l4-4z"/></g></svg>Logout</li>
+                </ul>
+
+            </nav>
+        </aside>
+
+        <!-- main content -->
+        <main class="main-content">
+
+
+
+            <section id="dashboard" class="content-section active">
+                <header class="header">
+                    <p class="bigHeader">Dashboard</p>
+                     <div class="user-profile">
+                        <div class="avatar-container">
+                            <img src="../img/dp.jpg" alt="Profile-photo" class="profile-photo">
+                        </div>
+                        
+                        <p>Welcome back! <span id="username"><b></b></span></p>
+                    </div>
+                </header>
+                <!-- account cards -->
+                <div class="account-cards">
+                    <!-- current balance card -->
+                    <div class="card current-balance">
+                        <header>
+                            <p>Current Balance</p>
+                        </header>
+                        <p class="amount" id="current-balance">₦0.00</p>
+                    </div>
+                    <!-- income card -->
+                    <div class="card income">
+                        <header>
+                            <p>Income</p>
+                            <p data-action="trans" class="history">Transaction History <svg data-action="trans" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 17l5-5m0 0l-5-5"/></svg></p>
+                        </header>
+                        <footer>
+                            <p class="amount" id="income">₦0.00</p>
+                        </footer>
+                    </div>
+                    <!-- expenses card -->
+                    <div class="card expenses">
+                        <header>
+                            <p>Expenses</p>
+                            <p data-action="trans" class="history">Transaction History <svg data-action="trans" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 17l5-5m0 0l-5-5"/></svg></p>
+                        </header>
+                        <footer>
+                            <p class="amount" id="expenses">₦0.00</p>
+                        </footer>
+                    </div>
+                    <!-- budget card -->
+                    <div class="card budget">
+                        <header>
+                            <p>Budget</p>
+                            <p data-action="budg" class="history">Budget History <svg data-action="budg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 17l5-5m0 0l-5-5"/></svg></p>
+                        </header>
+                        <div class="budget-progress">
+                            <progress id="budget-progress-bar" value="40" max="100"></progress>
+                            <span id="budget-percent">40%</span>
+                        </div>
+                        <footer>
+                            <p class="amount" id="expenses">4/10</p>
+                        </footer>
+                    </div>
+                </div>
+                <!-- summary cards -->
+                <div class="summary-cards">
+                    <div class="card chart">
+                        <header>
+                            <div class="head-header">
+                                <h4>Annual Summary</h4>
+                                <div class="filter-group">
+                                    <select id="transaction-date">
+                                        <option value="This month">This month</option>
+                                        <!-- date will be added dynamically -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="head-header">
+                                <p class="amount">$0.00</p>
+                                <div class="chart-bar-sample">
+                                    <p><span class="income-bar"></span>income</p>
+                                    <p><span class="expenses-bar"></span>expenses</p>
+                                </div>
+                            </div>
+                        </header>
+                        <canvas id="annual-summary-chart"></canvas>
+                    </div>
+                    <div class="card top-client">
+                        <header>
+                            <h4>Top Clients</h4>
+                        </header>
+                        <ul class="client-list">
+                            <li class="client">
+                                <div id="ID">1</div>
+                                <div class="client-info">
+                                    <p class="client-name">Thomas Frank</p>
+                                    <p class="amount">$1000</p>
+                                </div>
+                            </li>
+                               <!-- clients will be added dynamically -->
+                        </ul>
+                    </div>
+                    <div class="card top-expenses">
+                        <header>
+                            <h4>Top Expenses</h4>
+                        </header>
+                        <ul class="expense-list">
+                            <li class="expense">
+                                <div id="ID">1</div>
+                                <div class="expense-info">
+                                    <p class="expense-name">Office Supplies</p>
+                                    <p class="amount">$200</p>
+                                </div>
+                            </li>
+                            <!-- expenses will be added dynamically -->
+                        </ul>
+                    </div>
+                    <div class="card to-do">
+                        <header>
+                            <h4>To-Do List</h4>
+                        </header>
+                        <ul class="to-do-list">
+                            <li class="to-do-item">
+                                    <p class="task-name">Gwills Trading app</p>
+                                <footer>
+                                    <progress id="completion-bar" value="40" max="100"></progress>
+                                    <span>40%</span>
+                                </footer>
+                            </li>
+                            <!-- tasks will be added dynamically -->
+                        </ul>
+                    </div>
+                </div>                
+            </section>
+
+
+
+            <section id="calculator" class="content-section">
+                <!-- Calculator-->
+                <div class="calc-History-container">
+                    <!-- calculator Ui -->
+                    <div class="calc-container">
+                        <div class="display-n-btns">
+                            <div id="display">
+                                <p id="input">0</p>
+                                <p id="output">0</p>
+                                <div id="autoFill" class="loadPopup"><span style="font-size: 1.2rem; margin-right: .5rem;">+</span>Auto-fill Transaction</div>
+                            </div>
+                            <div class="btn-controls">
+                                <div class="btn clr" data-action="clr">C</div>
+                                <div class="btn mod" data-value="%">%</div>
+                                <div class="btn del" data-action="del">DEL</div>
+                                <div class="btn div" data-value="÷">÷</div>
+                                <div class="btn num7" data-value="7">7</div>
+                                <div class="btn num8" data-value="8">8</div>
+                                <div class="btn num9" data-value="9">9</div>
+                                <div class="btn mul" data-value="x">x</div>
+                                <div class="btn num4" data-value="4">4</div>
+                                <div class="btn num5" data-value="5">5</div>
+                                <div class="btn num6" data-value="6">6</div>
+                                <div class="btn sub" data-value="-">-</div>
+                                <div class="btn num1" data-value="1">1</div>
+                                <div class="btn num2" data-value="2">2</div>
+                                <div class="btn num3" data-value="3">3</div>
+                                <div class="btn add" data-value="+">+</div>
+                                <div class="btn decimal" data-value=".">.</div>
+                                <div class="btn num0" data-value="0">0</div>
+                                <div class="btn num00" data-value="00">00</div>
+                                <div class="btn equal" data-action="equal">=</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- History -->
+                    <div class="history-container" id="calcHistory">
+                        <header>
+                            <h4>History</h4>
+                            <p>Clear</p>
+                        </header>
+                        <ul id="history-list">
+                            <li id="list-item">
+                                <p id="input">2000 + 5000 + 10000</p>
+                                <p id="output">17,000</p>
+                            </li>
+                            <li id="list-item">
+                                <p id="input">1000000 + 2000 + 5000 + 10000</p>
+                                <p id="output">1,017,000</p>
+                            </li>
+                            
+                        </ul>                        
+                    </div>
+                </div>
+                
+            </section>
+
+
+
+            <section id="transactions" class="content-section">
+                <!-- transaction header -->
+                <header>
+                    <p class="bigHeader">Transactions</p>
+                    <p class="new-trans-btn loadPopup" id="transaction"><span style="font-size: 1.2rem; margin-right: .2rem;">+</span>New Transaction</p>
+                </header>
+
+                <!-- transaction filters -->
+                <div id="filters" class="filters">
+                    <label for="filters">Filter:</label>
+                    <div class="filter-group type">
+                        <select class="transaction-type">
+                            <option value="all">Type</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="filter-group description">
+                        <select class="transaction-type">
+                            <option value="all">Description</option>
+                            <!-- Descriptions will be added dynamically -->
+                        </select>
+                    </div>
+                    <div class="filter-group month">
+                        <select id="transaction-month">
+                            <option value="all">Month</option>
+                            <!-- Months will be added dynamically -->
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <!-- Transaction table -->
+                 <div class="t-items head">
+                    <div>Type</div>
+                    <div>Name</div>
+                    <div>Description</div>
+                    <div>Amount</div>
+                    <div>Date</div>
+                </div>
+                <div class="transTable">
+                <!-- record will be added automatically -->
+
+                </div>
+            </section>
+
+
+
+            <section id="budgets" class="content-section">
+                <!-- budget header -->
+                <header>
+                    <p class="bigHeader">Budgets</p>
+                    <p class="new-budget-btn loadPopup" id="budget"><span style="font-size: 1.2rem; margin-right: .2rem;">+</span>New Budget</p>
+                </header>
+
+                <!-- sorting categories -->
+                <div id="filter" class="filter">
+                    <label for="sort-categories">Filter:</label>
+                    <select class="sort-categories">
+                        <option value="all">Category</option>
+                        <option value="checked">Checked</option>
+                        <option value="unchecked">Unchecked</option>
+                    </select>
+                </div>
+
+                <div class="budget-table">
+                    <!-- table header -->
+                    <div id="header">
+                        <div class="t-Target">Target Name</div>
+                        <div class="t-Amount">Amount</div>
+                        <div class="t-Status">Status</div> 
+                        <div class="t-Check">Action</div>
+                    </div>
+                    <!-- table body -->
+                    <div id="body">
+                        <div class="tb-budget">
+                            <div class="t-Target">New Laptop Device</div>
+                            <div class="t-Amt">$400,000</div>
+                            <input class="t-check" type="checkbox">
+                            <div id="t-action" style="text-decoration: underline; cursor: pointer; color: hsl(var(--cl-danger-color-hs), calc(var(--cl-danger-color-l) + 10%));">Delete</div>
+                        </div>
+                        <div class="tb-budget">
+                            <div class="t-Target">New Laptop Device</div>
+                            <div class="t-Amt">$400,000</div>
+                            <input class="t-check" type="checkbox">
+                            <div id="t-action" style="text-decoration: underline; cursor: pointer; color: hsl(var(--cl-danger-color-hs), calc(var(--cl-danger-color-l) + 10%));">Delete</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <section id="to-do" class="content-section">
+                <!-- To-do header -->
+                <header>
+                    <p class="bigHeader">To-Do</p>
+                    <p class="new-to-do-btn loadPopup" id="to-do"><span style="font-size: 1.2rem; margin-right: .2rem;">+</span>New To-Do</p>
+                </header>
+
+                <!-- Headline options -->
+                <div class="headline">
+                    <!-- sorting categories -->
+                    <div id="filter" class="filter">
+                        <label for="sort-categories">Filter:</label>
+                        <select class="sort-categories">
+                            <option value="all">Category</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <!-- search bar -->
+                    <form class="search-form">
+                        <input type="search" name="search" id="search" placeholder="Search for task">
+                        <button type="submit" style="display: flex; align-items: center;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="#aaa" d="M10 18a7.95 7.95 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.95 7.95 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8m0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6"/></svg></button>
+                    </form>
+                    <!-- notification bar -->
+                    <div class="notification">
+                        <p>Click any of the indicators to change task status: </p>
+                        <span style="background-color: hsl(var(--cl-limegreen-hs), var(--cl-limegreen-l)); font-size: var(--fs-caption);"></span>
+                        <p>To Complete</p>
+                        <span style="background-color: hsl(var(--cl-tangerine-yellow-hs), calc(var(--cl-tangerine-yellow-l) + 0%)); font-size: var(--fs-caption);"></span>
+                        <p>To Re-start</p>
+                        <span style="background-color: hsl(var(--cl-danger-color-hs), calc(var(--cl-danger-color-l) + 10%)); font-size: var(--fs-caption);"></span>
+                        <p>To Cancel</p>
+                    </div>
+
+                </div>
+
+                <div class="to-do-table">
+                    <!-- table header -->
+                    <div id="header">
+                        <div class="t-Date">Date</div>
+                        <div class="t-Task">Task name</div>
+                        <div class="t-Timeframe">Time</div> 
+                        <div class="t-Countdown">Countdown</div>
+                        <div class="t-Status">Status</div>
+                    </div>
+                    <!-- table body -->
+                    <div id="body">
+                        <section class="date-section">
+                            <p class="date-label" style="margin-bottom: .5rem; margin-left: 1rem;">Today</p>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Pending">Pending</div>
+                                    <span id="complete" style="background-color: hsl(var(--cl-limegreen-hs), var(--cl-limegreen-l)); font-size: var(--fs-caption);"></span>
+                                    <span id="cancel" style="background-color: hsl(var(--cl-danger-color-hs), calc(var(--cl-danger-color-l) + 10%)); font-size: var(--fs-caption);"></span>
+                                </div>
+                            </div>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Completed">Completed</div>
+                                </div>
+                            </div>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Failed">Failed</div>
+                                    <span id="restart" style="background-color: hsl(var(--cl-tangerine-yellow-hs), calc(var(--cl-tangerine-yellow-l) + 0%)); font-size: var(--fs-caption);"></span>
+                                </div>
+                            </div>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Cancelled">Cancelled</div>
+                                    <span id="restart" style="background-color: hsl(var(--cl-tangerine-yellow-hs), calc(var(--cl-tangerine-yellow-l) + 0%)); font-size: var(--fs-caption);"></span>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="date-section">
+                            <p class="date-label" style="margin-bottom: .5rem; margin-left: 1rem;">Yesterday</p>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Completed">Completed</div>
+                                </div>
+                            </div>
+                            <div class="tb-to-do">
+                                <div class="t-Date">22 Sept 2025</div>
+                                <div class="t-Task">Test Teckies</div>
+                                <div class="t-Timeframe">1 Day</div> 
+                                <div class="t-Countdown">20Hrs : 30Mins : 45Secs</div>
+                                <div class="t-Status">
+                                    <div class="t-Pending">Pending</div>
+                                    <span id="complete" style="background-color: hsl(var(--cl-limegreen-hs), var(--cl-limegreen-l)); font-size: var(--fs-caption);"></span>
+                                    <span id="cancel" style="background-color: hsl(var(--cl-danger-color-hs), calc(var(--cl-danger-color-l) + 10%)); font-size: var(--fs-caption);"></span>
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+                </div>
+
+            </section>
+
+
+
+            <section id="invoice" class="content-section">
+                <!-- invoice message  -->
+                <p class="bigHeader">Coming Soon!</p>
+            </section>
+
+
+
+            <section id="about" class="content-section">
+                <p class="bigHeader">About Programmer</p>
+            </section>
+
+
+
+            <section id="privacy-terms" class="content-section">
+                <p class="bigHeader">Our Terms</p>
+            </section>
+
+                <!-- Modals -->
+                <div class="modal" id="close">
+                    <div class="modal-content">
+                        <span id="close" class="close-modal">&times;</span>
+                        <h2>Add New Transaction</h2>
+                        <!-- header navigation -->
+                        <div class="modal-Nav">
+                            <div class="active" id="nav-transaction">Transactions</div>
+                            <div id="nav-budget">Budget</div>
+                            <div id="nav-todo">To do</div>
+                        </div>
+
+                        <!-- Different forms -->
+                        <div class="forms">
+                            <!-- transaction form -->
+                            <form id="transaction-form">
+                                <div class="form-group">
+                                    <label for="trans-type">Type</label>
+                                    <select id="trans-type" required>
+                                        <option value="">Select type</option>
+                                        <option value="income">Income</option>
+                                        <option value="expense">Expense</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trans-name">Name</label>
+                                    <input type="text" id="trans-name" required placeholder="'John Doe' or 'Food Stuff'">
+                                </div>
+                                <div class="form-group">
+                                    <label for="trans-description">Description</label>
+                                    <input type="text" id="trans-description" required placeholder="'Brand Identity' or 'September Shopping'">
+                                </div>
+                                <div class="dual-form">
+                                    <div class="form-group">
+                                        <label for="rate">Currency</label>
+                                        <select name="rate" id="trans-rate" class="dual-input">
+                                            <option value="₦">₦ : Naira</option>
+                                            <option value="$">$ : US Dollar</option>
+                                            <option value="€">€ : Euro</option>
+                                            <option value="£">£ : British Pound</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="trans-amount">Amount</label>
+                                        <input class="dual-input" type="number" id="trans-amount" min="1" max="999999999" step="1" required placeholder="Enter amount">
+                                    </div>
+                                </div>  
+                                <div class="form-group">
+                                    <label for="trans-date">Date</label>
+                                    <input type="date" id="trans-date" required>
+                                </div>
+                                <div class="modal-btn">
+                                    <button type="button">Add New Transaction</button>
+                                </div> 
+                            </form>
+
+                            <!-- budget form -->
+                            <form id="budget-form">
+                                <div class="form-group">
+                                    <label for="budget-goal">Budget Goal</label>
+                                    <input type="text" id="budget-goal" required placeholder="New Studio Setup">
+                                </div>
+                                <div class="dual-form">
+                                    <div class="form-group">
+                                        <label for="rate">Currency</label>
+                                        <select name="rate" id="budget-rate" class="dual-input">
+                                            <option value="min">₦ : Naira</option>
+                                            <option value="hour">$ : US Dollar</option>
+                                            <option value="day">€ : Euro</option>
+                                            <option value="month">£ : British Pound</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="budget-amount">Amount</label>
+                                        <input class="dual-input" type="number" id="budget-amount" min="1" step="1" required placeholder="Enter Amount">
+                                    </div>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="budget-date">Date</label>
+                                    <input type="date" id="budget-date" required>
+                                </div>
+                                <div class="modal-btn">
+                                    <button type="submit" >Add New Goal</button>
+                                </div>    
+                            </form>
+
+                            <!-- To-do form -->
+                            <form id="To-do form">
+                                <div class="form-group">
+                                    <label for="task">Task</label>
+                                    <input type="text" id="task" required placeholder="My Portfolio Website">
+                                </div>
+                                <div class="dual-form">
+                                    <div class="form-group">
+                                        <label for="rate">Time Rate</label>
+                                        <select name="rate" id="todo-rate" class="dual-input">
+                                            <option value="min">Min</option>
+                                            <option value="hour">Hour</option>
+                                            <option value="day">Day</option>
+                                            <option value="month">Month</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="time-amount">Amount</label>
+                                        <input class="dual-input" type="number" id="time-amount" min="1" step="1" required placeholder="Enter Amount">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="todo-date">Date</label>
+                                    <input type="date" id="todo-date" required>
+                                </div>
+                                <div class="modal-btn">
+                                    <button type="submit" >Add New Task</button>
+                                </div>    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
