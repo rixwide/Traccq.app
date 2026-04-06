@@ -882,7 +882,7 @@ div.filters{
 }
 .t-items{
 	display: grid;
-	grid-template-columns: 1fr 3fr 3fr 2fr 1fr;
+	grid-template-columns: 1fr 3fr 3fr 2fr 1fr 0.5fr;
 	gap: .5rem;
 	padding: .75rem 1rem;
 	border-bottom: 1px solid #212529;
@@ -1304,6 +1304,51 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="number"]::webkit-number-picker-indicator{
 	background-image: none;
+}
+/* Three dot action menu */
+.action-menu-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-dot-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    line-height: 1;
+}
+
+.action-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #2b2f33;
+    border: 1px solid #3a3f44;
+    border-radius: 6px;
+    z-index: 100;
+    min-width: 110px;
+    overflow: hidden;
+}
+
+.action-dropdown p {
+    margin: 0;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.action-dropdown p:hover {
+    background-color: #3a3f44;
+}
+
+.hidden {
+    display: none;
 }
 
 }
