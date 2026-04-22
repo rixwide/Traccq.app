@@ -54,12 +54,12 @@
                 </ul>
 
                 <div class="currency-switch">
-                    <label for="currency">Switch:</label>
-                    <select id="currency">
-                        <option value="USD">₦</option>
-                        <option value="USD">$</option>
-                        <option value="EUR">€</option>
-                        <option value="GBP">£</option>
+                    <label for="switch-currency">Switch:</label>
+                    <select id="switch-currency">
+                        <option value="₦" data-code="NGN">NGN</option>
+                        <option value="$" data-code="USD">USD</option>
+                        <option value="€" data-code="EUR">EUR</option>
+                        <option value="£" data-code="GBP">GBP</option>
                     </select>
                 </div>
                 
@@ -96,7 +96,7 @@
                         <header>
                             <p>Current Balance</p>
                         </header>
-                        <p class="amount" id="current-balance">₦0.00</p>
+                        <p class="amount" id="dashboard-current-balance"></p>
                     </div>
                     <!-- income card -->
                     <div class="card income">
@@ -105,7 +105,7 @@
                             <p data-action="trans" class="history">Transaction History <svg data-action="trans" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 17l5-5m0 0l-5-5"/></svg></p>
                         </header>
                         <footer>
-                            <p class="amount" id="income">₦0.00</p>
+                            <p class="amount" id="dashboard-income"></p>
                         </footer>
                     </div>
                     <!-- expenses card -->
@@ -115,7 +115,7 @@
                             <p data-action="trans" class="history">Transaction History <svg data-action="trans" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 17l5-5m0 0l-5-5"/></svg></p>
                         </header>
                         <footer>
-                            <p class="amount" id="expenses">₦0.00</p>
+                            <p class="amount" id="dashboard-expense"></p>
                         </footer>
                     </div>
                     <!-- budget card -->
@@ -129,7 +129,7 @@
                             <span id="budget-percent">40%</span>
                         </div>
                         <footer>
-                            <p class="amount" id="expenses">4/10</p>
+                            <p class="amount" id="dashboard-budget">4/10</p>
                         </footer>
                     </div>
                 </div>
@@ -278,14 +278,14 @@
                 <div id="filters" class="filters">
                     <label for="filters">Filter:</label>
                     <div class="filter-group type">
-                        <select class="transaction-type">
+                        <select id="transaction-type">
                             <option value="all">All</option>
                             <option value="income">Income</option>
                             <option value="expense">Expense</option>
                         </select>
                     </div>
                     <div class="filter-group description">
-                        <select class="transaction-type">
+                        <select id="transaction-description">
                             <option value="all">Description</option>
                             <!-- Descriptions will be added dynamically -->
                         </select>
@@ -532,7 +532,7 @@
                                     <input type="text" id="trans-name" required placeholder="'John Doe' or 'Food Stuff'">
                                 </div>
                                 <div class="form-group">
-                                    <label for="trans-description">Description</label>
+                                    <label for="trans-description">Description <span style="font-size: 12px; color: #9c9c9c; font-weight: 300;">(Try reusing previous descriptions for consistency)</span></label>
                                     <input type="text" id="trans-description" required placeholder="'Brand Identity' or 'September Shopping'">
                                 </div>
                                 <div class="dual-form">
@@ -540,9 +540,9 @@
                                         <label for="rate">Currency</label>
                                         <select name="rate" id="trans-rate" class="dual-input">
                                             <option value="₦">₦ : Naira</option>
-                                            <option value="$">$ : US Dollar</option>
-                                            <option value="€">€ : Euro</option>
-                                            <option value="£">£ : British Pound</option>
+                                            <option value="$" disabled>$ : US Dollar</option>
+                                            <option value="€" disabled>€ : Euro</option>
+                                            <option value="£" disabled>£ : British Pound</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
