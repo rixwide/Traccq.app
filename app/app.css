@@ -130,6 +130,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	font-family: 'Sora', sans-serif;
 }
 
 @font-face {
@@ -140,7 +141,6 @@
 }
 
 body {
-	font-family: var(--ff);
 	font-size: var(--fs-body-sm);
     background-color: hsl(var(--cl-black-hs), var(--cl-black-l));
     color: hsl(var(--cl-light-hs), var(--cl-light-l), .8);
